@@ -1,17 +1,5 @@
-.square {
-    background-color: white;
-    margin: 0px;
-    float: left;
-    display: flex;
-    flex-direction: column;
-    transition: background-color 0.3s ease;
-}
-
-.square:hover {
-    background-color: black;
-}
-
-body {
-    background-color: black;
-    color: cornsilk;
+.board {
+    background-color: antiquewhite;
+    width: 500px;
+    height: 500px;
 }
