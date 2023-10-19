@@ -7,24 +7,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Sketch Board</h1>
-    <div class="status">Board Status (click on the board to start colouring )</div>
+    <h1>Sk<span id="one">et</span>ch<span id="two"> Bo</span>ard</h1>
+    <div class="container">
+        <div class="status">Board Status (click on the board to start colouring )</div>
     <div class="board"></div><br>
     <div class="button">
-        <button onclick="changeColor('antiquewhite')">Erasor</button>
-        <button onclick="changeColor('black')">Black</button>
-        <button onclick="changeColor('blue')">Blue</button>
-        <button onclick="changeColor('red')">Red</button>
-        <button onclick="changeColor('yellow')">Yellow</button>
-        <button onclick="changeColor('green')">Green</button>
-        <button onclick="changeColor('random')">Random Colour</button>
-        <button onclick="resetBoard()">Reset Board</button>
+        <button id="erasor" onclick="changeColor('antiquewhite')">Erasor</button>
+        <button id="black" onclick="changeColor('black')">Black</button>
+        <button id="blue" onclick="changeColor('blue')">Blue</button>
+        <button id="red" onclick="changeColor('red')">Red</button>
+        <button id="yellow" onclick="changeColor('yellow')">Yellow</button>
+        <button id="green" onclick="changeColor('green')">Green</button>
+        <button id="random" onclick="changeColor('random')">Random Colour</button>
+        <button id="reset" onclick="resetBoard()">Reset Board</button>
     </div><br>
     <div>
         <input type="text" placeholder="Size of Board (2 to 100)" value="16" onchange="boardSize(this.value)">
-        <button>Set Board Size</button>
+        <button id="size">Set Board Size</button>
     </div>
     <div class="error">Input - between 2 and 100</div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>

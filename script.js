@@ -24,6 +24,7 @@ function boardSize(input){
     }
     else {
         document.querySelector('.error').textContent="Error input between 2 and 100";
+        document.querySelector('.error').style.color="red";
     }
 }
 
