@@ -8,8 +8,16 @@
 </head>
 <body>
     <h1>Sketch Board</h1>
-    <div class="board"></div>
-    <div class="button"><button>Erasor</button><button>Black</button></div>
+    <div class="board"></div><br>
+    <div class="button">
+        <button>Erasor</button>
+        <button>Black</button>
+        <button>colour</button>
+    </div><br>
+    <div>
+        <input type="text" placeholder="Size of Board (2 to 100)" value="16" onchange="boardSize(this.value)">
+        <button>Set Size</button>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>
