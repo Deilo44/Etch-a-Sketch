@@ -1,4 +1,6 @@
 let color = "black";
+let click = false;
+
 function creatediv(size){
     let board = document.querySelector(".board");
     let squares =board.querySelectorAll("div");
@@ -17,18 +19,39 @@ function creatediv(size){
 creatediv(16);
 
 function boardSize(input){
-    if(input >=2 || input <= 100){
+    if(input >=2 && input <= 100){
         creatediv(input);
     }
     else {
-        console.log("Too many divs or very few divs");
+        document.querySelector('.error').textContent="Error input between 2 and 100";
     }
 }
 
 function colordiv(){
-    this.style.backgroundColor = color;
+    if (click){
+        if (color== "random"){
+            this.style.backgroundColor = `hsl(${Math.random()*360},100%,50%)`;
+        } else {
+            this.style.backgroundColor = color;
+        }
+    }
 }
 
 function changeColor(choice){
     color = choice;
 }
+
+function resetBoard(){
+    let board = document.querySelector(".board");
+    let squares =board.querySelectorAll("div");
+    squares.forEach((div) => div.style.backgroundColor ="antiquewhite");
+}
+
+document.querySelector('.board').addEventListener("click",(e) =>{
+    click =!click;
+    if (click) {
+        document.querySelector(".status").textContent = "Drawing active (click on the board to stop drawing)";
+    } else {
+        document.querySelector(".status").textContent = "Drawing inactive (click on the board to start drawing)";
+    }
+});
