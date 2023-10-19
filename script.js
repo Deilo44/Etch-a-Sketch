@@ -21,6 +21,7 @@ creatediv(16);
 function boardSize(input){
     if(input >=2 && input <= 100){
         creatediv(input);
+        document.querySelector('.error').textContent="Nice Drawing";
     }
     else {
         document.querySelector('.error').textContent="Error input between 2 and 100";
