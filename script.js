@@ -1,3 +1,4 @@
+let color = "black";
 function creatediv(size){
     let board = document.querySelector(".board");
     let squares =board.querySelectorAll("div");
@@ -7,6 +8,7 @@ function creatediv(size){
     let number = size*size;
     for (let i=0;i<number;i++){
         let square = document.createElement("div");
+        square.addEventListener("mouseover", colordiv);
         square.style.backgroundColor="antiquewhite";
         board.insertAdjacentElement("beforeend",square);
 } 
@@ -15,5 +17,18 @@ function creatediv(size){
 creatediv(16);
 
 function boardSize(input){
-    creatediv(input);
+    if(input >=2 || input <= 100){
+        creatediv(input);
+    }
+    else {
+        console.log("Too many divs or very few divs");
+    }
+}
+
+function colordiv(){
+    this.style.backgroundColor = color;
+}
+
+function changeColor(choice){
+    color = choice;
 }
